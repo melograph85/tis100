@@ -1,0 +1,4 @@
+@0
+MOV UP ACC
+MOV ACC DOWN
+

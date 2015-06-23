@@ -1,0 +1,42 @@
+{
+  "name": "tis100",
+  "version": "1.0.0",
+  "description": "TIS-100 Emulator and Tools",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "node_modules/.bin/coffee -c -w -o lib src",
+    "parser": "wach -o 'src/*' node_modules/.bin/pegjs src/asm-parser.pegjs lib/asm-parser.js"
+  },
+  "keywords": [
+    "tis100",
+    "games",
+    "emulation",
+    "genetic programming"
+  ],
+  "author": "melograph85 <melograph85@gmail.com>",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melograph85/tis100"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "pegjs": "^0.8.0"
+  },
+  "dependencies": {
+    "clear": "0.0.1",
+    "cli-table": "^0.3.1",
+    "clone": "^1.0.2",
+    "commander": "^2.8.1",
+    "debug": "^2.2.0",
+    "extend": "^2.0.1",
+    "intercept-stdout": "^0.1.1",
+    "keypress": "^0.2.1",
+    "lua.vm.js": "kripken/lua.vm.js",
+    "random-js": "^1.0.4",
+    "stats-lite": "^1.0.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
