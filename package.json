@@ -1,7 +1,10 @@
 {
   "name": "tis100",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TIS-100 Emulator and Tools",
+  "bin": {
+    "tis100": "bin/tis100"
+  },
   "main": "lib/index.js",
   "scripts": {
     "watch": "node_modules/.bin/coffee -c -w -o lib src",
