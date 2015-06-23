@@ -49,6 +49,8 @@ Use `tis100 run` to run a program against a specification and view the final res
 
 Specifications let players share puzzles. They're written in Lua and can be accessed from the game's specification editor. Click "CREATE NEW SPECIFICATION" in the game to open a new boilerplate specification. That boilerplate has been checked in as `samples/default.lua`.
 
+Note: I added support for a `get_layout_width()` function in specs so I can experiment with one- or two-node programs. See `samples/one-two.lua` and `samples/single.lua`.
+
 ## Genetic Programming
 
 This was written as an attempt to solve puzzles through [genetic programming](http://www.genetic-programming.org/). It can currently solve very simple examples, but not much more. It's a long way from solving even the self test diagnostic. Maybe you can help!
@@ -56,7 +58,7 @@ This was written as an attempt to solve puzzles through [genetic programming](ht
 For now, see the quick tutorial on [http://www.genetic-programming.org/](http://www.genetic-programming.org/), and see the options using `tis100 solve --help`. Some key terms:
 
 - **Initial population** size is specified by the `--children` option
-- **Fitnesa** is how likely a program is to be copied or changed in the next generation. We currently weight higher when a program finishes, has correct numbers in the output, or has a non-zero standard deviation in the output.
+- **Fitness** is how likely a program is to be copied or changed in the next generation. We currently weight higher when a program finishes, has correct numbers in the output, or has a non-zero standard deviation in the output.
 - **Alteration** adds, removes or changes a single instruction in a random node
 - **Mutation** replaces a random node with new random code
 - **Crossover** combines two parent programs, picking a node from either at random
@@ -113,7 +115,7 @@ OUT:
 ...
 ```
 
-After 7990 generations (159,800 programs), the emulator found a solution that uses one node to `SUB -2` and `MOV ACC DOWN` repeatedly.
+After 7990 generations (159,800 programs), the emulator found a solution that uses one node to `SUB -2` and `MOV ACC DOWN` repeatedly. It's obvious now, but earlier it never occurred to me that I could be `SUB`ing negative numbers, so this taught me something.
 
 ## Developing
 
